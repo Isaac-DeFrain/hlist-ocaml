@@ -20,10 +20,15 @@ module type S = sig
     | [] : ([ `cons of unit * 'a ] as 'a) seq
 
   val seq_head : [ `cons of 'hd * 'tl ] seq -> 'hd elem
+
   val seq_tail : [ `cons of 'hd * 'tl ] seq -> 'tl seq
+
   val seq_get : ('a, 'b, 'xs, 'ys) idx -> 'xs seq -> 'a elem
+
   val seq_put : ('a, 'b, 'xs, 'ys) idx -> 'xs seq -> 'b elem -> 'ys seq
+
   val seq_get2 : ('a, 'b, 'xs, 'ys) idx -> 'ys seq -> 'b elem
+
   val seq_put2 : ('a, 'b, 'xs, 'ys) idx -> 'ys seq -> 'a elem -> 'xs seq
 end
 
@@ -38,7 +43,9 @@ end
 (** Shadows the hetero list above, re-introducing the standard list constructors
     (::) and [] in scope. The original hetero list could be written as
     Hetero.[1; "abc"; true], for example. *)
-type 'a list = 'a List.t = [] | ( :: ) of 'a * 'a list
+type 'a list = 'a List.t =
+  | []
+  | ( :: ) of 'a * 'a list
 
 module Make : functor
   (E : sig

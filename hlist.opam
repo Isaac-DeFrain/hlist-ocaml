@@ -10,7 +10,7 @@ doc: "https://github.com/keigoi/hlist-ocaml"
 bug-reports: "https://github.com/keigoi/hlist-ocaml/issues"
 depends: [
   "dune" {>= "3.1"}
-  "ounit" {with-test}
+  "oUnit" {with-test}
   "odoc" {with-doc}
 ]
 build: [

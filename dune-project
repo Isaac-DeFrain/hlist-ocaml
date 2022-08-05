@@ -20,4 +20,4 @@
  (synopsis "Heterogeneously-typed lists for OCaml")
  (description "Heterogeneously-typed lists for OCaml.")
  (depends
-  (ounit :with-test)))
+  (oUnit :with-test)))
